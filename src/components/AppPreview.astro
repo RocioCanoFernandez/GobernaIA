@@ -1,0 +1,226 @@
+---
+// Componente de Maqueta Interactiva de la Aplicación Real
+// Ruta en repositorio: web/src/components/AppPreview.astro
+// Justificación: Muestra réplicas directas y fidedignas de las pantallas reales en stage (Dashboard, Evidencias, Panel Gestora).
+---
+
+<div class="w-full max-w-5xl mx-auto rounded-2xl border border-gray-200 bg-white shadow-2xl overflow-hidden">
+  
+  <!-- Barra superior de la aplicación (Header de la App Real) -->
+  <div class="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between text-xs sm:text-sm">
+    <div class="flex items-center gap-3">
+      <!-- Icono menú / Escudo -->
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <div class="flex items-center gap-1.5 font-bold text-gray-900">
+          <img src="/logos/gobernaia-escudo.png" alt="GobernaIA" class="h-5 w-auto" />
+          <span>Goberna<span class="text-goberna-red">IA</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selector de cliente gestionado / Empresa activa -->
+    <div class="flex items-center gap-4 text-gray-600">
+      <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-gray-700">
+        <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+        </svg>
+        <span>Ferretería Industrial Guadaíra</span>
+      </div>
+      <div class="flex items-center gap-1.5 text-xs text-gray-700 font-medium">
+        <div class="w-6 h-6 rounded-full bg-red-100 text-goberna-red flex items-center justify-center font-bold text-[10px]">
+          S
+        </div>
+        <span class="hidden sm:inline">SeviAI (Gestora)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor con barra lateral y vista principal -->
+  <div class="flex bg-gray-50/60 min-h-[460px]">
+    
+    <!-- Sidebar de la app real -->
+    <aside class="hidden lg:block w-52 bg-white border-r border-gray-200 p-3 text-xs space-y-4">
+      <div class="space-y-1">
+        <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-red-50 text-goberna-red font-semibold border-l-2 border-goberna-red">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+          </svg>
+          <span>Dashboard</span>
+        </div>
+      </div>
+
+      <div class="space-y-1">
+        <div class="text-[10px] uppercase font-bold tracking-wider text-gray-400 px-3">Gobernanza IA</div>
+        <div class="flex items-center gap-2 px-3 py-1.5 text-gray-600 hover:text-gray-900 rounded-md">
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          <span>Inventario de IA</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 text-gray-600 hover:text-gray-900 rounded-md">
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          <span>Evaluación Riesgos</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 text-gray-600 hover:text-gray-900 rounded-md">
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Políticas y Avisos</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 text-gray-600 hover:text-gray-900 rounded-md">
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+          <span>Evidencias</span>
+        </div>
+      </div>
+
+      <div class="space-y-1 pt-2 border-t border-gray-100">
+        <div class="text-[10px] uppercase font-bold tracking-wider text-gray-400 px-3">Administración</div>
+        <div class="flex items-center gap-2 px-3 py-1.5 text-gray-600 hover:text-gray-900 rounded-md">
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          <span>Empresas</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 text-gray-600 hover:text-gray-900 rounded-md">
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Auditoría</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Área de contenido principal de la simulación -->
+    <div class="flex-1 p-4 sm:p-6 space-y-5">
+      
+      <!-- Título de vista -->
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900">Dashboard de Gobernanza</h3>
+          <p class="text-xs text-gray-500">Resumen de cumplimiento y gestión de sistemas de IA</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-green-50 text-green-700 border border-green-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+            Stage Activo
+          </span>
+        </div>
+      </div>
+
+      <!-- Tarjetas de Métricas (KPIs reales) -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <!-- KPI 1 -->
+        <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-sm space-y-1">
+          <div class="flex items-center justify-between text-gray-400">
+            <span class="text-[11px] font-medium text-gray-600">Sistemas de IA</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+          </div>
+          <div class="text-2xl font-bold text-gray-900">2</div>
+          <p class="text-[10px] text-gray-500">2 con evaluación</p>
+        </div>
+
+        <!-- KPI 2 -->
+        <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-sm space-y-1">
+          <div class="flex items-center justify-between text-gray-400">
+            <span class="text-[11px] font-medium text-gray-600">Cobertura</span>
+            <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div class="text-2xl font-bold text-green-600">100%</div>
+          <div class="w-full bg-gray-100 rounded-full h-1 mt-1">
+            <div class="bg-green-500 h-1 rounded-full w-full"></div>
+          </div>
+        </div>
+
+        <!-- KPI 3 -->
+        <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-sm space-y-1">
+          <div class="flex items-center justify-between text-gray-400">
+            <span class="text-[11px] font-medium text-gray-600">Evidencias (mes)</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div class="text-2xl font-bold text-gray-900">2</div>
+          <p class="text-[10px] text-gray-500">Registradas este mes</p>
+        </div>
+
+        <!-- KPI 4 -->
+        <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-sm space-y-1">
+          <div class="flex items-center justify-between text-gray-400">
+            <span class="text-[11px] font-medium text-gray-600">Avisos Activos</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          </div>
+          <div class="text-2xl font-bold text-gray-900">0</div>
+          <p class="text-[10px] text-gray-500">Transparencia art. 50</p>
+        </div>
+      </div>
+
+      <!-- Fila inferior: Semáforo y Tabla de Sistemas/Evidencias -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        
+        <!-- Semáforo de Cobertura -->
+        <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <h4 class="text-xs font-bold text-gray-900">Semáforo de Cobertura</h4>
+            <p class="text-[11px] text-gray-500">Estado general de gobernanza</p>
+          </div>
+          <div class="my-4 flex items-center gap-3 p-3 bg-green-50/70 border border-green-200 rounded-lg">
+            <div class="w-9 h-9 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+              ✓
+            </div>
+            <div>
+              <div class="text-sm font-bold text-green-900">Cumple</div>
+              <div class="text-[11px] text-green-700">100% de sistemas evaluados (2 de 2)</div>
+            </div>
+          </div>
+          <div class="text-[10px] text-gray-400">
+            Matriz de riesgo operativo vinculada
+          </div>
+        </div>
+
+        <!-- Muestra de Evidencias registradas -->
+        <div class="md:col-span-2 bg-white p-4 rounded-xl border border-gray-200 shadow-sm space-y-3">
+          <div class="flex items-center justify-between">
+            <div>
+              <h4 class="text-xs font-bold text-gray-900">Evidencias en curso</h4>
+              <p class="text-[11px] text-gray-500">Trazabilidad por sistema y control</p>
+            </div>
+            <span class="text-[11px] font-semibold text-goberna-red">+ Añadir Evidencia</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-[11px] text-left">
+              <thead>
+                <tr class="text-gray-400 border-b border-gray-100 pb-1">
+                  <th class="py-1.5 font-medium">Sistema de IA</th>
+                  <th class="py-1.5 font-medium">Tipo</th>
+                  <th class="py-1.5 font-medium">Estado</th>
+                  <th class="py-1.5 font-medium">Versión</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr>
+                  <td class="py-2.5 font-semibold text-gray-800">Previsión de stock y reposición</td>
+                  <td class="py-2.5 text-gray-500">Política de datos</td>
+                  <td class="py-2.5"><span class="badge-cumple">Vigente</span></td>
+                  <td class="py-2.5 text-gray-400">v1.2 (PDF)</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 font-semibold text-gray-800">Buscador inteligente de catálogo</td>
+                  <td class="py-2.5 text-gray-500">Registro de uso</td>
+                  <td class="py-2.5"><span class="badge-revision">En Revisión</span></td>
+                  <td class="py-2.5 text-gray-400">Borrador</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Pie de la maqueta informativa -->
+  <div class="bg-gray-100/80 px-4 py-2 border-t border-gray-200 flex flex-wrap items-center justify-between text-[11px] text-gray-500">
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-green-500"></span>
+      <span>Entorno Stage verificado: <strong>stage.gobernaia.tarsisuniverse.com</strong></span>
+    </div>
+    <span class="text-gray-400">Panel multiempresa con separación de datos y permisos delegados</span>
+  </div>
+
+</div>

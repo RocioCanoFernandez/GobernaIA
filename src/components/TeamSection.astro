@@ -1,0 +1,135 @@
+---
+// Sección de Equipo y Autoridad de GobernaIA
+// Ruta en repositorio: web/src/components/TeamSection.astro
+// Justificación: Presenta a los cuatro impulsores del proyecto con soporte para fotografías reales y respaldo de RZS Abogados.
+
+const team = [
+  {
+    name: "Rocío Cano",
+    role: "Dirección de Producto y Estrategia Operativa",
+    company: "Fundadora de SeviAI",
+    bio: "Especialista en implantación de Inteligencia Artificial y gobernanza de procesos para empresas. Lidera la visión del producto y la adaptación práctica de las exigencias normativas a la operativa real de negocio.",
+    area: "Negocio & Producto",
+    initials: "RC",
+    photo: "/team/rocio-cano.jpg"
+  },
+  {
+    name: "Pepe Salgado",
+    role: "Dirección Técnica y Arquitectura Cloud",
+    company: "Arquitecto de Software",
+    bio: "Más de 20 años de trayectoria en desarrollo de software y sistemas distribuidos. Responsable de la infraestructura, seguridad, panel multiempresa y motor de reglas de gobernanza de GobernaIA.",
+    area: "Ingeniería & Datos",
+    initials: "PS",
+    photo: null
+  },
+  {
+    name: "Amal Ezzeddine",
+    role: "Dirección Legal y Regulación de IA",
+    company: "Socia en RZS Abogados",
+    bio: "Abogada especialista en Inteligencia Artificial y Derecho Digital. Asesora en gobernanza y cumplimiento del AI Act en entornos de alta exigencia (incluyendo sector salud). Codiseña el cuestionario legal y la estructura de evidencias.",
+    area: "Derecho Digital & AI Act",
+    initials: "AE",
+    photo: null
+  },
+  {
+    name: "Natalia Álvarez",
+    role: "Especialista Jurídica y Privacidad",
+    company: "Socia en RZS Abogados",
+    bio: "Abogada experta en Derecho Tecnológico, protección de datos e impacto normativo de algoritmos. Supervisa la correlación entre controles técnicos, evaluación de riesgos de uso y las exigencias de la Unión Europea.",
+    area: "Cumplimiento & Privacidad",
+    initials: "NA",
+    photo: null
+  }
+];
+---
+
+<section id="equipo" class="py-20 bg-white border-b border-goberna-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Encabezado de la Sección -->
+    <div class="max-w-3xl mb-14 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-red-50 text-xs font-semibold text-goberna-red-dark">
+        Equipo & Respaldo Profesional
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-goberna-dark tracking-tight">
+        Quienes estamos detrás de GobernaIA.
+      </h2>
+      <p class="text-base sm:text-lg text-goberna-muted leading-relaxed">
+        Una plataforma de gobernanza no puede ser programada solo por informáticos ni asesorada solo en papel. GobernaIA nace de la unión directa entre <strong>ingeniería de software avanzada y un despacho de abogados especializado en Inteligencia Artificial</strong>.
+      </p>
+    </div>
+
+    <!-- Grid de los 4 Integrantes -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      {team.map((member) => (
+        <div class="bg-gray-50/70 border border-gray-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-card-hover hover:border-gray-300 transition-all">
+          <div class="space-y-4">
+            
+            <!-- Avatar con foto real o iniciales corporativas -->
+            <div class="flex items-center justify-between">
+              {member.photo ? (
+                <img 
+                  src={member.photo} 
+                  alt={member.name}
+                  class="w-16 h-16 rounded-2xl object-cover object-top border-2 border-white shadow-md ring-1 ring-gray-200"
+                />
+              ) : (
+                <div class="w-16 h-16 rounded-2xl bg-white border border-gray-200 text-goberna-dark font-extrabold text-lg flex items-center justify-center shadow-sm">
+                  <span class="text-goberna-dark">{member.initials.charAt(0)}</span>
+                  <span class="text-goberna-red">{member.initials.charAt(1)}</span>
+                </div>
+              )}
+              <span class="text-[10px] font-semibold uppercase tracking-wider text-gray-500 bg-white px-2.5 py-1 rounded-md border border-gray-200">
+                {member.area}
+              </span>
+            </div>
+
+            <!-- Datos del integrante -->
+            <div class="space-y-1">
+              <h3 class="text-lg font-bold text-goberna-dark">{member.name}</h3>
+              <p class="text-xs font-semibold text-goberna-red">{member.role}</p>
+              <p class="text-[11px] font-medium text-gray-400">{member.company}</p>
+            </div>
+
+            <!-- Bio descriptiva -->
+            <p class="text-xs text-goberna-muted leading-relaxed pt-2 border-t border-gray-200/60">
+              {member.bio}
+            </p>
+
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-gray-200/60 flex items-center gap-1.5 text-[11px] font-semibold text-gray-700">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+            <span>Núcleo impulsor</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Banner diferencial: El respaldo de RZS Abogados -->
+    <div class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-3xl p-8 sm:p-10 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl">
+      <div class="space-y-3 max-w-2xl text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-bold border border-red-500/30">
+          Diferencial LegalTech
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+          Criterio jurídico real desde la primera línea de código.
+        </h3>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          Cada regla del cuestionario, cada matriz de clasificación y cada flujo de custodia de evidencias ha sido diseñado con <strong>RZS Abogados</strong>. No adaptamos un software genérico al AI Act: construimos la plataforma desde la práctica procesal y regulatoria del despacho.
+        </p>
+      </div>
+
+      <div class="flex-shrink-0 flex flex-col sm:flex-row items-center gap-4">
+        <div class="px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15 text-center">
+          <div class="text-xs text-gray-400 font-medium">Entidad colaboradora</div>
+          <div class="text-lg font-bold tracking-wider text-white">RZS ABOGADOS</div>
+        </div>
+        <a href="#contacto" class="btn-primary whitespace-nowrap text-sm px-6 py-3.5">
+          Hablar con el equipo
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,219 @@
+---
+// Componente de Mapeo: Obligaciones del Reglamento de IA vs. Cobertura en GobernaIA
+// Ruta en repositorio: web/src/components/LegalRequirementsMapping.astro
+// Justificación: Implementa el enfoque de venta a cliente y despachos pedido por Pepe Salgado: partir de las exigencias del AI Act y mostrar qué mecanismo de software cubre cada obligación.
+
+const obligations = [
+  {
+    article: "Art. 9 AI Act",
+    title: "Gestión de Riesgos Continua",
+    requirement: "Obligación de mantener un sistema de gestión de riesgos iterativo y documentado a lo largo de todo el ciclo de vida del sistema de IA.",
+    solution: "Generación automática de controles obligatorios con responsable asignado, vinculación de evidencias técnicas y registro auditable continuo.",
+    status: "Feria 18-Nov",
+    badgeClass: "badge-revision"
+  },
+  {
+    article: "Art. 10 AI Act",
+    title: "Gobernanza y Calidad de Datos",
+    requirement: "Exigencia de examinar sesgos, representatividad, procedencia y tratamiento adecuado de los conjuntos de datos de entrenamiento y validación.",
+    solution: "Control específico de calidad de datos, custodia de fichas técnicas de dataset y evidencias documentales de mitigación de sesgos.",
+    status: "Feria 18-Nov",
+    badgeClass: "badge-revision"
+  },
+  {
+    article: "Art. 11 & Anexo IV",
+    title: "Documentación Técnica Completa",
+    requirement: "Elaboración y custodia de un expediente técnico exhaustivo antes de poner cualquier sistema de IA en servicio o en el mercado.",
+    solution: "Estructura guiada del Anexo IV integrada en el expediente del sistema: arquitectura, algoritmos, proveedores y versionado documental.",
+    status: "Feria 18-Nov",
+    badgeClass: "badge-revision"
+  },
+  {
+    article: "Art. 12 AI Act",
+    title: "Registros Automáticos (Logs & Hash)",
+    requirement: "Capacidad técnica de registrar eventos y decisiones de trazabilidad durante el funcionamiento del sistema.",
+    solution: "Módulo de Auditoría con encadenamiento criptográfico (cadena de hash). Cada cambio, alta y evidencia queda sellado de forma inmutable.",
+    status: "Disponible ya",
+    badgeClass: "badge-cumple"
+  },
+  {
+    article: "Art. 13 & 50",
+    title: "Transparencia y Avisos a Usuarios",
+    requirement: "Informar de forma visible y clara a las personas cuando interactúan con un sistema de IA o ante contenidos sintéticos.",
+    solution: "Clasificación asistida de Riesgo Limitado (art. 50), gestión del texto del aviso legal y custodia de evidencias de implantación en la web/app.",
+    status: "Feria 18-Nov",
+    badgeClass: "badge-revision"
+  },
+  {
+    article: "Art. 14 AI Act",
+    title: "Supervisión Humana Efectiva",
+    requirement: "Garantizar que personas físicas cualificadas supervisen el sistema de IA y puedan intervenir, corregir o detener su funcionamiento.",
+    solution: "Flujo de aprobación cruzada (regla de cuatro ojos): quien sube una evidencia o informe no puede aprobarlo; requiere validación de un supervisor.",
+    status: "Feria 18-Nov",
+    badgeClass: "badge-revision"
+  },
+  {
+    article: "Art. 15 AI Act",
+    title: "Ciberseguridad, Precisión y Robustez",
+    requirement: "Resiliencia técnica frente a errores, fallos de entrada de datos y vulnerabilidades de explotación de ciberataques.",
+    solution: "Controles de seguridad asociados al sistema, revisión periódica de proveedores tecnológicos y acreditación de auditorías técnicas.",
+    status: "Feria 18-Nov",
+    badgeClass: "badge-revision"
+  },
+  {
+    article: "Art. 27 AI Act",
+    title: "Evaluación de Impacto en Derechos Fundamentales (EIDF)",
+    requirement: "Exigencia legal preceptiva para entidades del sector público y ciertos servicios esenciales (scoring, empleo, crédito) clasificados de alto riesgo.",
+    solution: "Control específico de EIDF en el expediente de alto riesgo, con separación funcional del análisis de riesgos técnicos y custodia del dictamen.",
+    status: "Feria 18-Nov",
+    badgeClass: "badge-revision"
+  },
+  {
+    article: "Art. 6 & Anexo III",
+    title: "Clasificación Legal Objetiva",
+    requirement: "Determinar con precisión si un sistema está prohibido, si es de alto riesgo, riesgo limitado o riesgo mínimo, y si emplea modelos GPAI.",
+    solution: "Cuestionario guiado en dos dimensiones independientes (Uso + GPAI de terceros) con histórico permanente de clasificaciones y fecha de firma.",
+    status: "Disponible ya",
+    badgeClass: "badge-cumple"
+  },
+  {
+    article: "Apetito de Negocio",
+    title: "Riesgo Operativo Configurable",
+    requirement: "Controlar el impacto económico y operativo del fallo del sistema dentro de la propia empresa, con independencia de la ley.",
+    solution: "Matriz Impacto × Probabilidad (1 a 25) con umbrales, etiquetas y colores configurables a medida por cada empresa cliente.",
+    status: "Disponible ya",
+    badgeClass: "badge-cumple"
+  }
+];
+---
+
+<section id="plataforma" class="py-20 bg-white border-b border-goberna-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Encabezado con enfoque cliente y legal -->
+    <div class="max-w-3xl mb-12 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-red-50 text-xs font-semibold text-goberna-red-dark">
+        Enfoque Normativo & Negocio
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-goberna-dark tracking-tight">
+        La ley exige obligaciones estrictas. <br class="hidden sm:inline" />
+        <span class="text-goberna-red">GobernaIA las traduce en acciones y evidencias.</span>
+      </h2>
+      <p class="text-base sm:text-lg text-goberna-muted leading-relaxed">
+        No vendemos pantallas sueltas de software. Acompañamos a tu despacho o empresa mostrando <strong>qué exige exactamente el Reglamento Europeo de IA</strong> y qué mecanismo operativo de la plataforma lo resuelve ante una auditoría.
+      </p>
+    </div>
+
+    <!-- Banner explicativo del motor integrado (Por qué se cubren las obligaciones en bloque) -->
+    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-1.5 text-center md:text-left">
+        <div class="flex items-center justify-center md:justify-start gap-2 text-xs font-bold uppercase tracking-wider text-goberna-dark">
+          <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+          Arquitectura Integrada de Gobernanza
+        </div>
+        <h3 class="text-base sm:text-lg font-bold text-goberna-dark">
+          Un único mecanismo que responde a las 12 áreas del Reglamento Europeo
+        </h3>
+        <p class="text-xs sm:text-sm text-goberna-muted max-w-2xl leading-relaxed">
+          En lugar de rellenar documentos dispersos, GobernaIA aplica un motor común: <strong>Controles asignados + Evidencias documentales + Aprobación cruzada (cuatro ojos) + Auditoría con cadena de hash</strong>. Cada área legal queda cubierta y protegida de forma unificada.
+        </p>
+      </div>
+
+      <div class="flex-shrink-0 flex items-center gap-3 text-xs font-semibold">
+        <span class="px-3 py-1.5 rounded-lg bg-green-100 text-green-800">🟢 Disponible hoy</span>
+        <span class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800">🟡 En feria InproInnova</span>
+      </div>
+    </div>
+
+    <!-- Grid / Tabla de Obligaciones vs Solución GobernaIA -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+      {obligations.map((item) => (
+        <div class="card-saas flex flex-col justify-between hover:border-gray-300 transition-colors space-y-4">
+          <div class="space-y-3">
+            
+            <!-- Cabecera de la tarjeta: Artículo y Estado -->
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs font-bold text-gray-500 bg-gray-100 px-2.5 py-1 rounded-md">
+                {item.article}
+              </span>
+              <span class={item.badgeClass}>
+                {item.status}
+              </span>
+            </div>
+
+            <!-- Título de la Obligación -->
+            <h3 class="text-lg font-bold text-goberna-dark">
+              {item.title}
+            </h3>
+
+            <!-- Qué exige la ley -->
+            <div class="text-xs space-y-1 bg-red-50/40 p-3 rounded-lg border border-red-100">
+              <span class="font-bold text-goberna-red-dark uppercase text-[10px] tracking-wider block">Qué exige la ley:</span>
+              <p class="text-gray-700 leading-relaxed">{item.requirement}</p>
+            </div>
+
+            <!-- Cómo lo cubre GobernaIA -->
+            <div class="text-xs space-y-1 bg-gray-50 p-3 rounded-lg border border-gray-100">
+              <span class="font-bold text-gray-900 uppercase text-[10px] tracking-wider block">Cómo lo cubre GobernaIA:</span>
+              <p class="text-goberna-muted leading-relaxed">{item.solution}</p>
+            </div>
+
+          </div>
+
+          <div class="pt-2 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
+            <span>Expediente vivo trazable</span>
+            <span class="font-semibold text-goberna-dark">✓ Auditable</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Resumen de Capacidades Disponibles ya en Stage -->
+    <div class="border-t border-gray-200 pt-12">
+      <div class="max-w-2xl mb-6">
+        <h3 class="text-xl font-bold text-goberna-dark">
+          Lo que ya puedes ver y probar hoy en el entorno Stage
+        </h3>
+        <p class="text-xs text-goberna-muted">
+          Transparencia absoluta con nuestros clientes: estas 7 funcionalidades clave ya están construidas, probadas y funcionando en nuestro servidor.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-xs">
+        <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center gap-2">
+          <span class="text-green-600 font-bold">✓</span>
+          <span class="text-gray-800 font-medium">Inventario de Sistemas</span>
+        </div>
+        <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center gap-2">
+          <span class="text-green-600 font-bold">✓</span>
+          <span class="text-gray-800 font-medium">Clasificación legal (2 ejes)</span>
+        </div>
+        <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center gap-2">
+          <span class="text-green-600 font-bold">✓</span>
+          <span class="text-gray-800 font-medium">Riesgo operativo (1-25)</span>
+        </div>
+        <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center gap-2">
+          <span class="text-green-600 font-bold">✓</span>
+          <span class="text-gray-800 font-medium">Custodia de Evidencias</span>
+        </div>
+        <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center gap-2">
+          <span class="text-green-600 font-bold">✓</span>
+          <span class="text-gray-800 font-medium">Auditoría con cadena hash</span>
+        </div>
+        <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center gap-2">
+          <span class="text-green-600 font-bold">✓</span>
+          <span class="text-gray-800 font-medium">Panel Multiempresa Gestora</span>
+        </div>
+        <div class="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center gap-2">
+          <span class="text-green-600 font-bold">✓</span>
+          <span class="text-gray-800 font-medium">Aislamiento total de datos</span>
+        </div>
+        <div class="p-3 rounded-xl bg-red-50 border border-red-200 flex items-center gap-2">
+          <span class="text-goberna-red font-bold">➔</span>
+          <a href="#contacto" class="text-goberna-red-dark font-bold hover:underline">Pedir demo en vivo</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

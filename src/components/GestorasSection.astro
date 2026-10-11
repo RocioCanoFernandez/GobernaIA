@@ -1,0 +1,107 @@
+---
+// Sección "Para Gestoras" (Despachos y Consultoras)
+// Ruta en repositorio: web/src/components/GestorasSection.astro
+// Justificación: Presenta la propuesta de valor prioritaria de GobernaIA: el modelo B2B2B multiempresa para despachos legales y consultoras GRC.
+---
+
+<section id="para-gestoras" class="py-20 bg-white border-b border-goberna-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-3xl mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-red-50 text-xs font-semibold text-goberna-red-dark mb-3">
+        Prioridad B2B2B
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-goberna-dark tracking-tight">
+        Gestiona la gobernanza de IA de múltiples clientes desde un único entorno.
+      </h2>
+      <p class="mt-4 text-lg text-goberna-muted leading-relaxed">
+        El Reglamento Europeo de IA no se resuelve con plantillas de Word ni con hojas de cálculo dispersas. Diseñado para que despachos y firmas de cumplimiento automaticen la recopilación de evidencias sin perder el control profesional.
+      </p>
+    </div>
+
+    <!-- Grid de Pilares para Gestoras -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Tarjeta 1: Panel Multiempresa -->
+      <div class="card-saas space-y-4 hover:shadow-card-hover transition-shadow">
+        <div class="w-12 h-12 rounded-xl bg-red-50 text-goberna-red flex items-center justify-center font-bold">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </div>
+        <div class="space-y-1">
+          <span class="badge-gestora">Rol Gestora</span>
+          <h3 class="text-xl font-bold text-goberna-dark">Panel Centralizado</h3>
+        </div>
+        <p class="text-sm text-goberna-muted leading-relaxed">
+          Supervisa el estado de gobernanza, inventarios y evidencias de cada cliente desde un dashboard unificado. Cambia de contexto en un clic sin mezclar datos.
+        </p>
+        <ul class="text-xs text-goberna-subtle space-y-2 pt-2 border-t border-gray-100">
+          <li class="flex items-center gap-2">✓ Visión global de riesgos y coberturas</li>
+          <li class="flex items-center gap-2">✓ Alertas de caducidad de evidencias</li>
+          <li class="flex items-center gap-2">✓ Asignación de roles por despacho</li>
+        </ul>
+      </div>
+
+      <!-- Tarjeta 2: Acceso Delegado y Propiedad -->
+      <div class="card-saas space-y-4 hover:shadow-card-hover transition-shadow">
+        <div class="w-12 h-12 rounded-xl bg-gray-100 text-goberna-dark flex items-center justify-center font-bold">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <div class="space-y-1">
+          <span class="badge-gestionada">Acceso Delegado</span>
+          <h3 class="text-xl font-bold text-goberna-dark">Custodia y Propiedad</h3>
+        </div>
+        <p class="text-sm text-goberna-muted leading-relaxed">
+          Los datos pertenecen siempre a la empresa cliente. Tu despacho opera como gestor autorizado, garantizando continuidad y cumplimiento si el cliente cambia de asesor.
+        </p>
+        <ul class="text-xs text-goberna-subtle space-y-2 pt-2 border-t border-gray-100">
+          <li class="flex items-center gap-2">✓ Separación estricta de bases de datos</li>
+          <li class="flex items-center gap-2">✓ El cliente aporta evidencias con su login</li>
+          <li class="flex items-center gap-2">✓ Aprobación final reservada al gestor</li>
+        </ul>
+      </div>
+
+      <!-- Tarjeta 3: Expedientes Exportables -->
+      <div class="card-saas space-y-4 hover:shadow-card-hover transition-shadow">
+        <div class="w-12 h-12 rounded-xl bg-green-50 text-green-700 flex items-center justify-center font-bold">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <div class="space-y-1">
+          <span class="badge-cumple">Trazabilidad</span>
+          <h3 class="text-xl font-bold text-goberna-dark">Inspección Inmediata</h3>
+        </div>
+        <p class="text-sm text-goberna-muted leading-relaxed">
+          Toda la vida del sistema queda registrada: quién clasificó, qué evidencia se subió y quién la validó. Todo listo para exportar ante auditorías o requerimientos oficiales.
+        </p>
+        <ul class="text-xs text-goberna-subtle space-y-2 pt-2 border-t border-gray-100">
+          <li class="flex items-center gap-2">✓ Histórico inmutable de versiones</li>
+          <li class="flex items-center gap-2">✓ Vinculación directa con las 12 áreas AESIA</li>
+          <li class="flex items-center gap-2">✓ Preparado para EIDF (Evaluación de Impacto)</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Mención de Colaboración Legal Real -->
+    <div class="mt-12 bg-gray-50 border border-gray-200 rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center sm:text-left">
+        <div class="text-xs uppercase font-bold text-gray-500 tracking-wider">Diseñado junto a profesionales del Derecho</div>
+        <h4 class="text-lg font-bold text-goberna-dark">
+          Desarrollado en colaboración con despachos especialistas en IA y Nuevas Tecnologías
+        </h4>
+        <p class="text-sm text-goberna-muted">
+          GobernaIA integra el criterio de juristas en activo (RZS Abogados) para asegurar que el software responda a las exigencias procesales reales.
+        </p>
+      </div>
+      <a href="#contacto" class="btn-primary whitespace-nowrap text-sm px-6 py-3">
+        Solicitar sesión para mi despacho
+      </a>
+    </div>
+
+  </div>
+</section>

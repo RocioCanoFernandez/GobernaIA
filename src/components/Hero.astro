@@ -1,0 +1,64 @@
+---
+// Componente Hero principal para GobernaIA
+// Ruta en repositorio: web/src/components/Hero.astro
+// Justificación: Transmite la propuesta de valor nuclear, conecta con gestoras y muestra inmediatamente la app real.
+import AppPreview from './AppPreview.astro';
+---
+
+<section class="relative pt-12 pb-20 overflow-hidden bg-gradient-to-b from-gray-50/60 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Bloque de Texto Principal -->
+    <div class="text-center max-w-3xl mx-auto space-y-6 mb-14">
+      
+      <!-- Píldora de estado y categoría -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-xs font-semibold text-goberna-red-dark">
+        <span class="w-2 h-2 rounded-full bg-goberna-red"></span>
+        Plataforma SaaS de Gobernanza y Evidencias de IA
+      </div>
+
+      <!-- Titular H1 -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-goberna-dark tracking-tight leading-[1.15]">
+        Gobernanza de IA, organizada por cada sistema y <span class="text-goberna-red">durante todo su ciclo</span>.
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="text-lg sm:text-xl text-goberna-muted leading-relaxed max-w-2xl mx-auto">
+        Ayudamos a <strong>despachos, consultoras y departamentos de cumplimiento</strong> a coordinar inventarios, clasificaciones legales, controles y evidencias trazables desde un entorno multiempresa.
+      </p>
+
+      <!-- Botones de Acción -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+        <a href="#contacto" class="btn-primary w-full sm:w-auto text-base px-7 py-3">
+          Hablar con el equipo
+        </a>
+        <a href="#plataforma" class="btn-secondary w-full sm:w-auto text-base px-6 py-3">
+          Conocer la plataforma
+        </a>
+      </div>
+
+      <!-- Beneficios clave rápidos -->
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-goberna-subtle font-medium">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Expediente vivo por sistema (11 etapas)
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Clasificación legal separada de riesgo operativo
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          Modelo delegado: los datos son del cliente
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Maqueta Interactiva de la Aplicación Real -->
+    <div class="relative mt-8">
+      <AppPreview />
+    </div>
+
+  </div>
+</section>

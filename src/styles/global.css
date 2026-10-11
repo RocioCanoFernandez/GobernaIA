@@ -1,0 +1,66 @@
+/* Estilos globales de GobernaIA */
+/* Ruta en repositorio: web/src/styles/global.css */
+/* Justificación: Define tipografías del sistema y estilos base para que la web respire la misma solidez visual que la aplicación SaaS. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+    color: #111827;
+    background-color: #FFFFFF;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Botón de acción principal rojo GobernaIA */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-medium text-white bg-goberna-red hover:bg-goberna-red-hover transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-goberna-red;
+  }
+
+  /* Botón secundario tipo interfaz SaaS */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-medium text-goberna-dark bg-white border border-goberna-border hover:bg-gray-50 hover:border-gray-300 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300;
+  }
+
+  /* Tarjeta estándar de la aplicación */
+  .card-saas {
+    @apply bg-white border border-goberna-border rounded-xl shadow-card p-6;
+  }
+
+  /* Badges semánticos idénticos a la app */
+  .badge-cumple {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800;
+  }
+
+  .badge-revision {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800;
+  }
+
+  .badge-alto {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800;
+  }
+
+  .badge-gestora {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-800 text-white;
+  }
+
+  .badge-gestionada {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800;
+  }
+
+  .badge-independiente {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-950 text-white;
+  }
+}

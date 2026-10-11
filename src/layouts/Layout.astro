@@ -1,0 +1,49 @@
+---
+// Layout principal para GobernaIA
+// Ruta en repositorio: web/src/layouts/Layout.astro
+// Justificación: Provee el cascarón HTML semántico, metadatos SEO, OpenGraph y estilos globales para todas las páginas.
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "GobernaIA | Plataforma SaaS de Gobernanza y Trazabilidad de IA",
+  description = "Gestiona el ciclo de vida, clasificación legal según el AI Act y expedientes vivos de inteligencia artificial para múltiples clientes desde un único entorno."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logos/gobernaia-escudo.png" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph y Twitter Cards -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/logos/gobernaia-logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon e iconos -->
+    <link rel="apple-touch-icon" href="/logos/gobernaia-escudo.png" />
+  </head>
+  <body class="bg-white text-goberna-dark flex flex-col min-h-screen selection:bg-goberna-red-light selection:text-goberna-red-dark">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,61 @@
+---
+// Página de Política de Privacidad de GobernaIA
+// Ruta en repositorio: web/src/pages/privacidad.astro
+// Justificación: Cumplimiento del RGPD y LOPDGDD para la recogida de datos mediante formularios web.
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Política de Privacidad | GobernaIA" 
+  description="Tratamiento transparente de datos personales y derechos RGPD en GobernaIA."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8">
+    <div class="space-y-2 border-b border-gray-200 pb-6">
+      <h1 class="text-3xl font-extrabold text-goberna-dark">Política de Privacidad</h1>
+      <p class="text-sm text-goberna-muted">Última actualización: Octubre de 2026</p>
+    </div>
+
+    <div class="prose prose-sm max-w-none text-goberna-muted space-y-6">
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">1. Responsable del Tratamiento</h2>
+        <p>
+          Los datos personales recabados a través de este sitio web (nombre, email, empresa y datos de contacto) son tratados por GobernaIA como responsable del tratamiento, con el fin de atender solicitudes de información, coordinar demostraciones de producto y gestionar relaciones comerciales B2B.
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">2. Finalidad y Base Jurídica</h2>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Gestión de solicitudes de contacto:</strong> La base jurídica es el consentimiento explícito del interesado al remitir el formulario web (art. 6.1.a RGPD).</li>
+          <li><strong>Demostraciones y presupuestos:</strong> Aplicación de medidas precontractuales a petición del interesado (art. 6.1.b RGPD).</li>
+        </ul>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">3. Principio de la Plataforma: Los datos pertenecen al cliente</h2>
+        <p>
+          En el marco de la aplicación SaaS GobernaIA, las evidencias, inventarios y políticas cargadas por las empresas clientes pertenecen de forma exclusiva y soberana a la organización titular. Ni GobernaIA ni los despachos gestores utilizan los datos de los clientes para entrenar modelos fundacionales ni para fines ajenos a la custodia y fiscalización de gobernanza.
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">4. Conservación y Destinatarios</h2>
+        <p>
+          Los datos de contacto se conservarán durante el tiempo necesario para responder a la solicitud comercial y, en su caso, mientras se mantenga la relación profesional. No se cederán datos a terceros salvo obligación legal expresa o prestadores de servicios tecnológicos estrictamente necesarios ubicados en la Unión Europea.
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">5. Derechos del Usuario</h2>
+        <p>
+          Usted tiene derecho a acceder a sus datos personales, solicitar su rectificación o supresión, limitar su tratamiento u oponerse al mismo enviando un correo electrónico a <a href="mailto:privacidad@gobernaia.es" class="text-goberna-red font-medium">privacidad@gobernaia.es</a> o ante la Agencia Española de Protección de Datos (AEPD).
+        </p>
+      </section>
+    </div>
+
+    <div class="pt-6 border-t border-gray-200">
+      <a href="/" class="btn-secondary text-xs">← Volver al inicio</a>
+    </div>
+  </div>
+</Layout>

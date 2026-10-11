@@ -1,0 +1,50 @@
+---
+// Página de Política de Cookies de GobernaIA
+// Ruta en repositorio: web/src/pages/cookies.astro
+// Justificación: Cumplimiento de la normativa sobre cookies y trazabilidad web.
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Política de Cookies | GobernaIA" 
+  description="Información sobre las cookies técnicas y de rendimiento empleadas en GobernaIA."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8">
+    <div class="space-y-2 border-b border-gray-200 pb-6">
+      <h1 class="text-3xl font-extrabold text-goberna-dark">Política de Cookies</h1>
+      <p class="text-sm text-goberna-muted">Última actualización: Octubre de 2026</p>
+    </div>
+
+    <div class="prose prose-sm max-w-none text-goberna-muted space-y-6">
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">1. ¿Qué son las cookies?</h2>
+        <p>
+          Una cookie es un pequeño archivo de texto que un sitio web almacena en el navegador del usuario para facilitar la navegación, recordar preferencias técnicas o recopilar métricas agregadas.
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">2. Cookies utilizadas en este sitio web</h2>
+        <p>
+          Este sitio web corporativo de GobernaIA está desarrollado para priorizar la privacidad y el rendimiento estático:
+        </p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Cookies técnicas esenciales:</strong> Necesarias para el correcto funcionamiento de la navegación, seguridad frente a ataques y preservación de preferencias de sesión en formularios. No requieren consentimiento.</li>
+          <li><strong>Cookies analíticas agregadas (sin rastreo intrusivo):</strong> Empleadas de forma anonimizada para medir visitas y rendimiento técnico del servidor, sin identificar individualmente a ningún usuario ni realizar perfilados publicitarios de terceros.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">3. Desactivación y Configuración</h2>
+        <p>
+          El usuario puede en cualquier momento bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador que utilice (Chrome, Firefox, Safari, Edge).
+        </p>
+      </section>
+    </div>
+
+    <div class="pt-6 border-t border-gray-200">
+      <a href="/" class="btn-secondary text-xs">← Volver al inicio</a>
+    </div>
+  </div>
+</Layout>

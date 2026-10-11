@@ -1,0 +1,80 @@
+---
+// Pie de página de GobernaIA
+// Ruta en repositorio: web/src/components/Footer.astro
+// Justificación: Todos los enlaces apuntan a destinos reales (módulos, páginas legales y anclas de navegación).
+---
+
+<footer class="bg-gray-50 border-t border-goberna-border mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+      
+      <!-- Columna 1: Marca y Propósito -->
+      <div class="lg:col-span-2 space-y-4">
+        <a href="/" class="flex items-center gap-3">
+          <img 
+            src="/logos/gobernaia-escudo.png" 
+            alt="GobernaIA" 
+            class="h-9 w-auto object-contain"
+          />
+          <span class="text-2xl font-bold tracking-tight text-goberna-dark">
+            Goberna<span class="text-goberna-red">IA</span>
+          </span>
+        </a>
+        <p class="text-sm text-goberna-muted leading-relaxed max-w-sm">
+          Plataforma SaaS de gobernanza, trazabilidad y custodia de evidencias para gestionar el ciclo de vida de sistemas de inteligencia artificial en organizaciones y despachos gestores.
+        </p>
+        <div class="pt-2 text-xs text-goberna-muted space-y-1">
+          <p><span class="font-semibold text-goberna-subtle">Modelo B2B2B:</span> Acceso delegado para gestoras y custodia de datos propiedad del cliente.</p>
+          <p><span class="font-semibold text-goberna-subtle">Respaldo legal:</span> Desarrollado en co-diseño jurídico con <strong>RZS Abogados</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Columna 2: Plataforma -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-semibold tracking-wider uppercase text-goberna-dark">Plataforma</h3>
+        <ul class="space-y-2 text-sm text-goberna-muted">
+          <li><a href="/#modulo-inventario" class="hover:text-goberna-red transition-colors">Inventario de Sistemas</a></li>
+          <li><a href="/#modulo-clasificacion" class="hover:text-goberna-red transition-colors">Clasificación en 2 Ejes</a></li>
+          <li><a href="/#modulo-evidencias" class="hover:text-goberna-red transition-colors">Gestión de Evidencias</a></li>
+          <li><a href="/#modulo-riesgos" class="hover:text-goberna-red transition-colors">Riesgo Operativo</a></li>
+          <li><a href="/#ciclo-de-vida" class="hover:text-goberna-red transition-colors">Los 11 Pasos del Ciclo</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Para Gestoras y Equipo -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-semibold tracking-wider uppercase text-goberna-dark">Profesionales</h3>
+        <ul class="space-y-2 text-sm text-goberna-muted">
+          <li><a href="/#para-gestoras" class="hover:text-goberna-red transition-colors">Despachos de Abogados</a></li>
+          <li><a href="/#para-gestoras" class="hover:text-goberna-red transition-colors">Consultoras GRC</a></li>
+          <li><a href="/#para-gestoras" class="hover:text-goberna-red transition-colors">Panel Multiempresa</a></li>
+          <li><a href="/#equipo" class="hover:text-goberna-red transition-colors">Equipo Impulsor (Los 4)</a></li>
+          <li><a href="/#contacto" class="hover:text-goberna-red transition-colors">Solicitar Demostración</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Transparencia y Legal -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-semibold tracking-wider uppercase text-goberna-dark">Legal & Transparencia</h3>
+        <ul class="space-y-2 text-sm text-goberna-muted">
+          <li><a href="/#metodo" class="hover:text-goberna-red transition-colors">Gobernanza Real</a></li>
+          <li><a href="/#faq" class="hover:text-goberna-red transition-colors">Preguntas Frecuentes</a></li>
+          <li><a href="/aviso-legal" class="hover:text-goberna-red transition-colors">Aviso Legal</a></li>
+          <li><a href="/privacidad" class="hover:text-goberna-red transition-colors">Política de Privacidad</a></li>
+          <li><a href="/cookies" class="hover:text-goberna-red transition-colors">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Barra inferior con descargo ético y derechos -->
+    <div class="mt-12 pt-8 border-t border-goberna-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-goberna-muted">
+      <p class="text-center md:text-left">
+        &copy; {new Date().getFullYear()} GobernaIA. Todos los derechos reservados.
+      </p>
+      <p class="text-center md:text-right max-w-xl text-[11px] leading-relaxed">
+        <strong>Aviso normativo:</strong> GobernaIA es un software que asiste en la estructuración de gobernanza y custodia de evidencias. No certifica ni garantiza por sí mismo el cumplimiento legal sin la intervención de profesionales jurídicos competentes.
+      </p>
+    </div>
+  </div>
+</footer>

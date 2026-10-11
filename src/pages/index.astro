@@ -1,0 +1,44 @@
+---
+// Página de inicio (Home) de GobernaIA
+// Ruta en repositorio: web/src/pages/index.astro
+// Justificación: Integra el enfoque cliente/legal propuesto por Pepe Salgado (obligaciones del AI Act traducidas a funcionalidades), el pilar para gestoras, equipo (los 4) y formulario de cualificación.
+
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import LegalRequirementsMapping from '../components/LegalRequirementsMapping.astro';
+import GestorasSection from '../components/GestorasSection.astro';
+import LifecycleSection from '../components/LifecycleSection.astro';
+import TeamSection from '../components/TeamSection.astro';
+import MethodologySection from '../components/MethodologySection.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<Layout 
+  title="GobernaIA | Plataforma de Gobernanza y Trazabilidad de Sistemas de IA"
+  description="Gobernanza de IA, organizada por cada sistema y durante todo su ciclo de vida. Plataforma SaaS para despachos legales, consultoras y departamentos de cumplimiento."
+>
+  <!-- Hero principal con maqueta interactiva del producto en stage -->
+  <Hero />
+
+  <!-- Enfoque Cliente/Legal: Qué exige la ley y cómo lo cubre GobernaIA -->
+  <LegalRequirementsMapping />
+
+  <!-- Pilar B2B2B: Solución para Gestoras (Despachos y Consultoras) -->
+  <GestorasSection />
+
+  <!-- Metodología: Ciclo de vida en 11 fases y clasificación legal vs operativa -->
+  <LifecycleSection />
+
+  <!-- Sección del Equipo: Los 4 impulsores técnicos y jurídicos + RZS Abogados -->
+  <TeamSection />
+
+  <!-- Posicionamiento ético: Gobernanza real frente a falsas promesas de compliance mágico -->
+  <MethodologySection />
+
+  <!-- Resolución de dudas y objeciones normativas -->
+  <FaqSection />
+
+  <!-- Formulario cualificado de contacto para despachos y empresas -->
+  <ContactSection />
+</Layout>

@@ -1,0 +1,59 @@
+---
+// Página de Aviso Legal de GobernaIA
+// Ruta en repositorio: web/src/pages/aviso-legal.astro
+// Justificación: Cumple con la normativa LSSI-CE de identificación y aviso legal.
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Aviso Legal | GobernaIA" 
+  description="Información legal sobre el titular del sitio web, condiciones de uso y propiedad intelectual de GobernaIA."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8">
+    <div class="space-y-2 border-b border-gray-200 pb-6">
+      <h1 class="text-3xl font-extrabold text-goberna-dark">Aviso Legal</h1>
+      <p class="text-sm text-goberna-muted">Última actualización: Octubre de 2026</p>
+    </div>
+
+    <div class="prose prose-sm max-w-none text-goberna-muted space-y-6">
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">1. Información General</h2>
+        <p>
+          En cumplimiento con el deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se informa de que este sitio web es titularidad del proyecto tecnológico <strong>GobernaIA</strong>, impulsado conjuntamente en el ecosistema de innovación de SeviAI con el asesoramiento y co-diseño legal de RZS Abogados.
+        </p>
+        <p>
+          Correo electrónico de contacto: <a href="mailto:contacto@gobernaia.es" class="text-goberna-red font-medium">contacto@gobernaia.es</a>
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">2. Objeto y Condiciones de Uso</h2>
+        <p>
+          El acceso y utilización de este sitio web atribuye la condición de usuario e implica la aceptación plena de las presentes condiciones. El sitio web tiene por objeto presentar las características, metodología y modelo de servicio de la plataforma SaaS de gobernanza y trazabilidad de sistemas de inteligencia artificial GobernaIA.
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">3. Delimitación de Responsabilidad</h2>
+        <p>
+          GobernaIA proporciona herramientas de software destinadas a estructurar la información, custodiar evidencias y facilitar la gestión del ciclo de vida de sistemas de inteligencia artificial conforme al Reglamento Europeo de IA (AI Act).
+        </p>
+        <p>
+          <strong>Importante:</strong> El uso de la plataforma no constituye por sí mismo asesoramiento jurídico vinculante ni garantiza la ausencia de sanciones administrativas. La validación formal de expedientes, evaluaciones de impacto en derechos fundamentales (EIDF) y clasificaciones de alto riesgo debe realizarse con la supervisión de profesionales legales cualificados.
+        </p>
+      </section>
+
+      <section class="space-y-2">
+        <h2 class="text-lg font-bold text-goberna-dark">4. Propiedad Intelectual e Industrial</h2>
+        <p>
+          Todos los derechos de propiedad industrial e intelectual sobre el código fuente, diseño gráfico, logotipos, textos y contenidos de este sitio web pertenecen a GobernaIA y sus titulares, quedando expresamente prohibida su reproducción sin autorización previa y por escrito.
+        </p>
+      </section>
+    </div>
+
+    <div class="pt-6 border-t border-gray-200">
+      <a href="/" class="btn-secondary text-xs">← Volver al inicio</a>
+    </div>
+  </div>
+</Layout>
