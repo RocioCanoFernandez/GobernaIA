@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Protección documental para trabajar con IA | GobernaIA"
+  description="Prepara PDF, Word y capturas antes de compartirlos con una IA mediante detección por reglas, revisión humana, eliminación segura o seudonimización reversible."
+>
+  <section class="relative overflow-hidden bg-goberna-light border-b border-goberna-border py-20 sm:py-24">
+    <div class="absolute -right-40 -top-48 h-[520px] w-[520px] rounded-full bg-red-100/60 blur-3xl" aria-hidden="true"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6">
+          <div class="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1 text-xs font-semibold text-goberna-red-dark">
+            Módulo de protección documental
+          </div>
+          <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-goberna-dark">
+            Más control antes de compartir documentos con una IA.
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-goberna-subtle">
+            Detecta identificadores mediante reglas, revisa el contexto y genera una copia nueva sin la información seleccionada o con sustituciones controladas.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="/?interes=proteccion-documental#contacto" class="btn-primary">Solicitar una demostración</a>
+            <a href="#como-funciona" class="btn-secondary">Ver cómo funciona</a>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-goberna-muted">
+            <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-green-600"></span>Procesamiento local en el candidato actual</span>
+            <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-green-600"></span>Sin IA, ML ni OCR durante la ejecución</span>
+            <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-amber-500"></span>Revisión humana obligatoria</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl">
+            <img src="/proteccion-documental/vista-general.png" alt="Vista general del candidato de protección documental GobernaIA" class="w-full h-auto" />
+          </div>
+          <p class="mt-3 text-center text-xs text-goberna-muted">Interfaz funcional mostrada con documentación ficticia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="py-20 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-xs font-bold uppercase tracking-wider text-goberna-red">Flujo controlado</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-goberna-dark">Cinco decisiones antes de obtener la copia protegida</h2>
+        <p class="mt-4 text-lg text-goberna-muted">El sistema no decide qué debe ocultarse. Ayuda a localizar, revisar y documentar cada decisión.</p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {[
+          ['01', 'Cargar', 'PDF, DOCX, PNG, JPG o un lote de archivos.'],
+          ['02', 'Detectar', 'Aplicar reglas y patrones sobre el texto disponible.'],
+          ['03', 'Revisar', 'Confirmar, descartar o añadir zonas manualmente.'],
+          ['04', 'Proteger', 'Eliminar de forma irreversible o sustituir.'],
+          ['05', 'Descargar', 'Obtener cada copia o todo el lote en ZIP.'],
+        ].map(([number, heading, copy]) => (
+          <article class="relative border-t-2 border-goberna-red pt-5">
+            <span class="text-xs font-bold text-goberna-red">{number}</span>
+            <h3 class="mt-3 text-xl font-bold text-goberna-dark">{heading}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-goberna-muted">{copy}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-14 overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 shadow-xl">
+        <img src="/proteccion-documental/revision-hallazgos.png" alt="Documento ficticio durante la revisión de hallazgos" class="w-full h-auto" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-24 bg-goberna-light border-y border-goberna-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <article class="rounded-2xl border border-gray-200 bg-white p-8 sm:p-10 shadow-sm">
+          <span class="text-xs font-bold uppercase tracking-wider text-goberna-red">Modo 1</span>
+          <h2 class="mt-4 text-3xl font-extrabold text-goberna-dark">Eliminación irreversible</h2>
+          <p class="mt-4 text-base leading-relaxed text-goberna-muted">
+            Genera una copia nueva sin el contenido seleccionado y sin conservar una tabla de correspondencia. Una caja negra superpuesta no basta: la información debe dejar de ser recuperable al copiar o extraer el texto.
+          </p>
+          <p class="mt-6 text-sm font-semibold text-goberna-dark">Para documentos que deben salir sin posibilidad de recuperar los datos eliminados.</p>
+        </article>
+
+        <article class="rounded-2xl bg-goberna-dark p-8 sm:p-10 shadow-sm">
+          <span class="text-xs font-bold uppercase tracking-wider text-red-300">Modo 2</span>
+          <h2 class="mt-4 text-3xl font-extrabold text-white">Seudonimización reversible</h2>
+          <p class="mt-4 text-base leading-relaxed text-slate-300">
+            Sustituye datos por identificadores y conserva las equivalencias en un archivo cifrado de recuperación. Permite reintegrar los valores cuando el documento regresa al flujo interno.
+          </p>
+          <p class="mt-6 text-sm font-semibold text-white">Reduce la exposición, pero no equivale a anonimización.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
+          <p class="text-xs font-bold uppercase tracking-wider text-green-700">Detección determinista</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-goberna-dark">Automatiza lo estructurado</h2>
+          <ul class="mt-7 space-y-4 text-base text-goberna-subtle">
+            {['DNI, NIE y NIF/CIF', 'Correos y teléfonos', 'IBAN y matrículas', 'Direcciones y pasaportes etiquetados', 'Nombres en campos reconocibles'].map((item) => (
+              <li class="flex items-start gap-3"><span class="mt-1 h-5 w-5 rounded-full bg-green-100 text-center text-xs font-bold leading-5 text-green-800">✓</span><span>{item}</span></li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7 rounded-2xl border border-red-100 bg-red-50/60 p-8 sm:p-10">
+          <p class="text-xs font-bold uppercase tracking-wider text-goberna-red">Revisión humana</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-goberna-dark">El contexto no se resuelve con una expresión regular</h2>
+          <p class="mt-5 text-base leading-relaxed text-goberna-subtle">
+            Nombres sin etiqueta, referencias a salud, relaciones personales, información indirecta o texto dentro de una imagen pueden requerir selección manual. La ausencia de coincidencias no significa que el documento sea anónimo.
+          </p>
+          <div class="mt-7 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            Los PDF escaneados sin texto se rechazan: el candidato actual no utiliza OCR ni modelos de aprendizaje automático para reconocer el contenido de las imágenes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-24 bg-goberna-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-xs font-bold uppercase tracking-wider text-red-300">Seguridad y límites</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">También protege cuando decide no continuar</h2>
+        <p class="mt-5 text-lg leading-relaxed text-slate-300">Si no puede procesar un archivo con garantías, lo rechaza y explica el motivo.</p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          ['Procesamiento local', 'El candidato actual trabaja en el equipo del usuario durante la demostración.'],
+          ['Salida nueva', 'La copia se genera sin capas recuperables ni metadatos heredados.'],
+          ['Rechazo seguro', 'Bloquea archivos dañados, protegidos o con contenido no tratable.'],
+          ['Control humano', 'Exige confirmación antes de generar y descargar el resultado.'],
+        ].map(([heading, copy]) => (
+          <article class="border-l border-red-400/50 pl-5">
+            <h3 class="text-lg font-bold">{heading}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-300">{copy}</p>
+          </article>
+        ))}
+      </div>
+
+      <p class="mt-12 max-w-4xl text-xs leading-relaxed text-slate-400">
+        Estado actual: candidato funcional validado con documentación ficticia. Antes de tratar documentos reales deben integrarse y validarse los controles de identidad, permisos, aislamiento entre clientes, gestión de claves, antimalware, auditoría, conservación y borrado de la arquitectura de producción.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 sm:py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <img src="/logos/gobernaia-escudo.png" alt="GobernaIA" class="mx-auto h-20 w-auto" loading="lazy" />
+      <h2 class="mt-7 text-3xl sm:text-4xl font-extrabold tracking-tight text-goberna-dark">Comprueba el flujo con documentación sintética</h2>
+      <p class="mt-5 mx-auto max-w-2xl text-lg leading-relaxed text-goberna-muted">
+        Te mostramos la detección, la revisión, la generación de copias protegidas y el funcionamiento de los proyectos reversibles sin utilizar documentación real de clientes.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+        <a href="/?interes=proteccion-documental#contacto" class="btn-primary">Solicitar una demostración</a>
+        <a href="mailto:contacto@appgobernaia.es?subject=Solicitud%20de%20demostraci%C3%B3n%20de%20protecci%C3%B3n%20documental" class="btn-secondary">Escribir a contacto@appgobernaia.es</a>
+      </div>
+      <p class="mt-5 text-xs text-goberna-muted">GobernaIA no garantiza por sí sola anonimización ni cumplimiento normativo.</p>
+    </div>
+  </section>
+</Layout>

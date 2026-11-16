@@ -1,64 +1,320 @@
 ---
-// Componente Hero principal para GobernaIA
-// Ruta en repositorio: web/src/components/Hero.astro
-// Justificación: Transmite la propuesta de valor nuclear, conecta con gestoras y muestra inmediatamente la app real.
 import AppPreview from './AppPreview.astro';
 ---
 
-<section class="relative pt-12 pb-20 overflow-hidden bg-gradient-to-b from-gray-50/60 to-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Bloque de Texto Principal -->
-    <div class="text-center max-w-3xl mx-auto space-y-6 mb-14">
-      
-      <!-- Píldora de estado y categoría -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-xs font-semibold text-goberna-red-dark">
-        <span class="w-2 h-2 rounded-full bg-goberna-red"></span>
-        Plataforma SaaS de Gobernanza y Evidencias de IA
+<section class="hero-shell relative overflow-hidden bg-[#0d1220] text-white">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-48 right-[-10%] w-[44rem] h-[44rem] rounded-full bg-red-600/20 blur-[110px]"></div>
+    <div class="absolute bottom-[-16rem] left-[-10rem] w-[34rem] h-[34rem] rounded-full bg-red-950/35 blur-[100px]"></div>
+    <div class="absolute inset-0 opacity-[0.16] bg-[linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] bg-[size:48px_48px]"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+    <div class="grid lg:grid-cols-[0.82fr_1.18fr] gap-12 lg:gap-14 items-center">
+      <div class="space-y-8">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-red-400/30 text-xs font-semibold text-red-100 backdrop-blur-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75 animate-ping"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-red-400"></span>
+          </span>
+          Gobernanza y evidencias conectadas
+        </div>
+
+        <div class="space-y-5">
+          <h1 class="text-4xl sm:text-5xl lg:text-[4.15rem] font-extrabold tracking-tight leading-[1.03]">
+            Del requisito a la evidencia. <span class="text-red-400">Sin perder el control.</span>
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-xl">
+            GobernaIA convierte decisiones dispersas en un expediente vivo: sistemas, responsables, controles y pruebas conectados durante todo su ciclo de vida.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-3 max-w-xl">
+          <div class="rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3">
+            <div class="text-red-300 text-xs font-bold uppercase tracking-wider">01</div>
+            <div class="text-sm font-semibold mt-1">Gobierna sistemas</div>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3">
+            <div class="text-red-300 text-xs font-bold uppercase tracking-wider">02</div>
+            <div class="text-sm font-semibold mt-1">Protege información</div>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3">
+            <div class="text-red-300 text-xs font-bold uppercase tracking-wider">03</div>
+            <div class="text-sm font-semibold mt-1">Demuestra decisiones</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#plataforma" class="inline-flex items-center justify-center rounded-xl bg-goberna-red hover:bg-red-700 text-white font-bold px-7 py-3.5 transition-colors shadow-lg shadow-red-950/30">
+            Ver cómo funciona
+          </a>
+          <a href="#contacto" class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold px-7 py-3.5 transition-colors">
+            Hablar con el equipo
+          </a>
+        </div>
+
+        <p class="text-xs leading-relaxed text-gray-400 max-w-xl border-l-2 border-red-400/60 pl-3">
+          GobernaIA estructura y documenta el trabajo; no garantiza por sí sola el cumplimiento ni sustituye el criterio jurídico, técnico o de protección de datos.
+        </p>
       </div>
 
-      <!-- Titular H1 -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-goberna-dark tracking-tight leading-[1.15]">
-        Gobernanza de IA, organizada por cada sistema y <span class="text-goberna-red">durante todo su ciclo</span>.
-      </h1>
+      <div data-hero-showcase class="relative">
+        <div class="absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-red-500/20 via-transparent to-white/5 blur-2xl"></div>
+        <div class="relative rounded-[1.75rem] overflow-hidden border border-white/15 bg-white shadow-2xl shadow-black/40">
+          <div class="bg-[#151b2b] border-b border-white/10 p-2 sm:p-3 flex gap-1.5 overflow-x-auto" role="tablist" aria-label="Ámbitos de GobernaIA">
+            <button type="button" class="showcase-tab is-active" data-showcase-button="gobernanza" role="tab" aria-selected="true" aria-controls="showcase-gobernanza">
+              <span class="status-dot bg-emerald-400"></span>
+              Plataforma actual
+            </button>
+            <button type="button" class="showcase-tab" data-showcase-button="documentos" role="tab" aria-selected="false" aria-controls="showcase-documentos">
+              <span class="status-dot bg-red-400"></span>
+              Protección documental
+            </button>
+            <button type="button" class="showcase-tab" data-showcase-button="roadmap" role="tab" aria-selected="false" aria-controls="showcase-roadmap">
+              <span class="status-dot bg-gray-400"></span>
+              Próximos módulos
+            </button>
+          </div>
 
-      <!-- Subtítulo -->
-      <p class="text-lg sm:text-xl text-goberna-muted leading-relaxed max-w-2xl mx-auto">
-        Ayudamos a <strong>despachos, consultoras y departamentos de cumplimiento</strong> a coordinar inventarios, clasificaciones legales, controles y evidencias trazables desde un entorno multiempresa.
-      </p>
+          <div class="showcase-stage bg-gray-100">
+            <div id="showcase-gobernanza" data-showcase-slide="gobernanza" role="tabpanel" class="showcase-slide is-active">
+              <div class="absolute top-4 left-4 z-20 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 shadow-sm">
+                Disponible en la plataforma
+              </div>
+              <div class="app-preview-scale">
+                <AppPreview />
+              </div>
+            </div>
 
-      <!-- Botones de Acción -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-        <a href="#contacto" class="btn-primary w-full sm:w-auto text-base px-7 py-3">
-          Hablar con el equipo
-        </a>
-        <a href="#plataforma" class="btn-secondary w-full sm:w-auto text-base px-6 py-3">
-          Conocer la plataforma
-        </a>
+            <div id="showcase-documentos" data-showcase-slide="documentos" role="tabpanel" class="showcase-slide" hidden>
+              <img src="/proteccion-documental/vista-general.png" alt="Vista del candidato funcional de protección documental" class="w-full h-full object-cover object-top" />
+              <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6 bg-gradient-to-t from-[#0d1220] via-[#0d1220]/85 to-transparent text-white">
+                <span class="inline-flex rounded-full bg-red-500/20 border border-red-300/30 text-red-100 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1">En validación</span>
+                <h2 class="text-xl sm:text-2xl font-extrabold mt-2">Protege el documento antes de compartirlo.</h2>
+                <p class="text-xs sm:text-sm text-gray-300 mt-1 max-w-xl">Detección por reglas, revisión humana y generación de una copia nueva sin contenido recuperable.</p>
+              </div>
+            </div>
+
+            <div id="showcase-roadmap" data-showcase-slide="roadmap" role="tabpanel" class="showcase-slide bg-[#f8f8fa]" hidden>
+              <div class="h-full p-6 sm:p-9 flex flex-col justify-center">
+                <div class="mb-6">
+                  <span class="inline-flex rounded-full bg-gray-200 text-gray-700 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1">Hoja de ruta · no disponible todavía</span>
+                  <h2 class="text-2xl sm:text-3xl font-extrabold text-goberna-dark mt-3">Una trazabilidad común para nuevas capas de protección.</h2>
+                </div>
+
+                <div class="roadmap-flow">
+                  <div class="roadmap-card">
+                    <div class="roadmap-number">01</div>
+                    <div>
+                      <div class="font-bold text-goberna-dark">Protección de datos</div>
+                      <div class="text-xs text-goberna-muted mt-1">Tratamientos, evaluaciones, encargados y conservación.</div>
+                    </div>
+                  </div>
+                  <div class="roadmap-connector" aria-hidden="true"><span></span></div>
+                  <div class="roadmap-card">
+                    <div class="roadmap-number">02</div>
+                    <div>
+                      <div class="font-bold text-goberna-dark">Ciberseguridad trazable</div>
+                      <div class="text-xs text-goberna-muted mt-1">Controles, responsables, pruebas y seguimiento.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-6 rounded-2xl bg-[#111827] text-white px-5 py-4 flex items-center justify-between gap-4">
+                  <div>
+                    <div class="text-[10px] text-red-300 font-bold uppercase tracking-wider">Principio común</div>
+                    <div class="font-semibold mt-1">Cada decisión deja una evidencia.</div>
+                  </div>
+                  <div class="w-11 h-11 rounded-xl bg-goberna-red flex items-center justify-center font-black">G</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border-t border-gray-200 px-4 sm:px-5 py-3 flex items-center justify-between gap-4">
+            <p data-showcase-caption class="text-xs text-gray-500">Inventario, clasificación, controles, responsables y evidencias por sistema.</p>
+            <div class="flex gap-1.5" aria-hidden="true">
+              <span class="showcase-marker is-active" data-showcase-marker="gobernanza"></span>
+              <span class="showcase-marker" data-showcase-marker="documentos"></span>
+              <span class="showcase-marker" data-showcase-marker="roadmap"></span>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Beneficios clave rápidos -->
-      <div class="pt-4 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-goberna-subtle font-medium">
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          Expediente vivo por sistema (11 etapas)
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          Clasificación legal separada de riesgo operativo
-        </span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          Modelo delegado: los datos son del cliente
-        </span>
-      </div>
-
     </div>
+  </div>
 
-    <!-- Maqueta Interactiva de la Aplicación Real -->
-    <div class="relative mt-8">
-      <AppPreview />
+  <div class="relative border-t border-white/10 bg-white/[0.035]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-xs text-gray-300">
+      <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Expediente vivo por sistema</span>
+      <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Acceso delegado para gestoras</span>
+      <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Revisión humana y trazabilidad</span>
     </div>
-
   </div>
 </section>
+
+<style>
+  .showcase-tab {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: .5rem;
+    border-radius: .8rem;
+    padding: .7rem .85rem;
+    color: rgb(156 163 175);
+    font-size: .72rem;
+    font-weight: 700;
+    transition: background-color .2s, color .2s;
+  }
+
+  .showcase-tab:hover,
+  .showcase-tab.is-active {
+    background: rgba(255,255,255,.09);
+    color: white;
+  }
+
+  .status-dot {
+    width: .42rem;
+    height: .42rem;
+    border-radius: 999px;
+    flex: 0 0 auto;
+  }
+
+  .showcase-stage {
+    position: relative;
+    height: 31rem;
+    overflow: hidden;
+  }
+
+  .showcase-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  .showcase-slide.is-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .app-preview-scale {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 139%;
+    transform: scale(.72);
+    transform-origin: top left;
+  }
+
+  .showcase-marker {
+    width: .45rem;
+    height: .45rem;
+    border-radius: 999px;
+    background: rgb(209 213 219);
+    transition: width .2s, background-color .2s;
+  }
+
+  .showcase-marker.is-active {
+    width: 1.4rem;
+    background: #dc2626;
+  }
+
+  .roadmap-flow {
+    display: grid;
+    grid-template-columns: 1fr 2.5rem 1fr;
+    align-items: center;
+  }
+
+  .roadmap-card {
+    min-height: 8.5rem;
+    border: 1px solid rgb(229 231 235);
+    border-radius: 1rem;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 12px 30px rgba(17, 24, 39, .07);
+  }
+
+  .roadmap-number {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .75rem;
+    background: rgb(254 242 242);
+    color: #dc2626;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-bottom: .75rem;
+  }
+
+  .roadmap-connector {
+    height: 2px;
+    background: rgb(252 165 165);
+    position: relative;
+  }
+
+  .roadmap-connector span {
+    position: absolute;
+    right: -.1rem;
+    top: 50%;
+    width: .5rem;
+    height: .5rem;
+    border-top: 2px solid rgb(248 113 113);
+    border-right: 2px solid rgb(248 113 113);
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  @media (max-width: 639px) {
+    .showcase-stage { height: 26rem; }
+    .app-preview-scale { width: 208%; transform: scale(.48); }
+    .roadmap-flow { grid-template-columns: 1fr; gap: .65rem; }
+    .roadmap-connector { width: 2px; height: 1.2rem; margin: 0 auto; }
+    .roadmap-connector span { right: 50%; top: auto; bottom: -.1rem; transform: translateX(50%) rotate(135deg); }
+    .roadmap-card { min-height: auto; }
+  }
+</style>
+
+<script>
+  const captions = {
+    gobernanza: 'Inventario, clasificación, controles, responsables y evidencias por sistema.',
+    documentos: 'Candidato funcional probado con documentos ficticios y revisión humana obligatoria.',
+    roadmap: 'Protección de datos y ciberseguridad se muestran como evolución prevista, no como módulos disponibles.'
+  };
+
+  function setupHeroShowcase() {
+    document.querySelectorAll('[data-hero-showcase]').forEach((showcase) => {
+      if (showcase.dataset.ready === 'true') return;
+      showcase.dataset.ready = 'true';
+
+      const buttons = showcase.querySelectorAll('[data-showcase-button]');
+      const slides = showcase.querySelectorAll('[data-showcase-slide]');
+      const markers = showcase.querySelectorAll('[data-showcase-marker]');
+      const caption = showcase.querySelector('[data-showcase-caption]');
+
+      const activate = (key) => {
+        buttons.forEach((button) => {
+          const active = button.dataset.showcaseButton === key;
+          button.classList.toggle('is-active', active);
+          button.setAttribute('aria-selected', String(active));
+        });
+
+        slides.forEach((slide) => {
+          const active = slide.dataset.showcaseSlide === key;
+          slide.hidden = !active;
+          slide.classList.toggle('is-active', active);
+        });
+
+        markers.forEach((marker) => marker.classList.toggle('is-active', marker.dataset.showcaseMarker === key));
+        if (caption) caption.textContent = captions[key] ?? '';
+      };
+
+      buttons.forEach((button) => button.addEventListener('click', () => activate(button.dataset.showcaseButton)));
+    });
+  }
+
+  setupHeroShowcase();
+  document.addEventListener('astro:page-load', setupHeroShowcase);
+</script>

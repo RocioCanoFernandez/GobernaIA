@@ -1,0 +1,77 @@
+---
+// Presentación del módulo de protección documental en la página principal.
+---
+
+<section id="proteccion-documental" class="relative overflow-hidden bg-goberna-dark py-20 sm:py-24">
+  <div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-red-950/30 to-transparent" aria-hidden="true"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-5">
+        <div class="inline-flex items-center gap-2 rounded-full border border-red-400/30 bg-red-500/10 px-3 py-1 text-xs font-semibold text-red-200">
+          <span class="h-2 w-2 rounded-full bg-red-400"></span>
+          Protección documental
+        </div>
+
+        <h2 class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+          Prepara documentos antes de compartirlos con una IA.
+        </h2>
+
+        <p class="mt-6 text-lg leading-relaxed text-slate-300">
+          Localiza identificadores mediante reglas, revisa cada coincidencia y genera una copia nueva con la información eliminada o sustituida. La decisión final sigue siendo humana.
+        </p>
+
+        <div class="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 text-sm">
+          <div class="flex items-start gap-3 text-slate-200">
+            <span class="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-500/15 text-green-300">✓</span>
+            <span>PDF y Word con texto</span>
+          </div>
+          <div class="flex items-start gap-3 text-slate-200">
+            <span class="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-500/15 text-green-300">✓</span>
+            <span>Capturas y lotes</span>
+          </div>
+          <div class="flex items-start gap-3 text-slate-200">
+            <span class="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-500/15 text-green-300">✓</span>
+            <span>Eliminación irreversible</span>
+          </div>
+          <div class="flex items-start gap-3 text-slate-200">
+            <span class="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-500/15 text-green-300">✓</span>
+            <span>Seudonimización reversible</span>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-3">
+          <a href="/proteccion-documental" class="btn-primary">Conocer la herramienta</a>
+          <a href="/?interes=proteccion-documental#contacto" class="inline-flex items-center justify-center rounded-lg border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10">
+            Solicitar demostración
+          </a>
+        </div>
+
+        <p class="mt-5 text-xs leading-relaxed text-slate-400">
+          Candidato funcional en validación con documentos ficticios. No garantiza anonimización completa ni sustituye la revisión profesional.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-3xl bg-red-500/10 blur-2xl" aria-hidden="true"></div>
+          <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white shadow-2xl">
+            <img
+              src="/proteccion-documental/revision-hallazgos.png"
+              alt="Pantalla de revisión de hallazgos sobre un documento ficticio"
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+          <div class="relative -mt-5 mx-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-xl">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wider text-goberna-red">Revisión asistida</p>
+              <p class="mt-1 text-sm font-semibold text-goberna-dark">Cada zona se muestra antes de generar la copia.</p>
+            </div>
+            <span class="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-800">Sin IA durante la ejecución</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

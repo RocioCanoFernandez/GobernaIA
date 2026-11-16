@@ -31,7 +31,7 @@
             </div>
             <div>
               <h4 class="text-xs font-bold text-gray-900">Demostración en entorno Stage</h4>
-              <p class="text-xs text-gray-500">Verás el panel multiempresa con casos y evidencias reales.</p>
+              <p class="text-xs text-gray-500">Verás el panel multiempresa con casos ficticios y evidencias de demostración.</p>
             </div>
           </div>
 
@@ -51,7 +51,7 @@
             </div>
             <div>
               <h4 class="text-xs font-bold text-gray-900">Contacto directo</h4>
-              <p class="text-xs text-gray-500">contacto@gobernaia.es</p>
+              <p class="text-xs text-gray-500">contacto@appgobernaia.es</p>
             </div>
           </div>
 
@@ -61,7 +61,8 @@
 
       <!-- Columna Derecha: Formulario Cualificado -->
       <div class="lg:col-span-7 bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-        <form class="space-y-4" onsubmit="event.preventDefault(); alert('¡Gracias por tu solicitud! Nos pondremos en contacto contigo en menos de 24 horas laborables.');">
+        <form id="contact-form" class="space-y-4">
+          <input id="interes" name="interes" type="hidden" value="Demostración general de GobernaIA" />
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -141,11 +142,12 @@
 
           <div class="pt-2">
             <button type="submit" class="btn-primary w-full py-3 text-sm font-semibold">
-              Solicitar demostración con el equipo
+              Preparar solicitud por correo
             </button>
             <p class="text-[11px] text-gray-400 text-center mt-2">
-              Respuesta en menos de 24 horas laborables. Sin compromisos ni llamadas agresivas de ventas.
+              Al continuar se abrirá tu aplicación de correo con la solicitud preparada. Podrás revisarla antes de enviarla.
             </p>
+            <p id="contact-status" class="hidden text-xs text-center mt-3 text-goberna-red-dark" role="status"></p>
           </div>
 
         </form>
@@ -155,3 +157,42 @@
 
   </div>
 </section>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const message = document.getElementById('mensaje');
+  const interest = document.getElementById('interes');
+  const status = document.getElementById('contact-status');
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get('interes') === 'proteccion-documental') {
+    if (interest instanceof HTMLInputElement) interest.value = 'Protección documental';
+    if (message instanceof HTMLTextAreaElement && !message.value) {
+      message.value = 'Me interesa conocer el módulo de protección documental y solicitar una demostración con documentos ficticios.';
+    }
+  }
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!(form instanceof HTMLFormElement) || !form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const subject = `Solicitud de demostración · ${data.get('interes') || 'GobernaIA'}`;
+    const body = [
+      `Nombre: ${data.get('nombre') || ''}`,
+      `Email: ${data.get('email') || ''}`,
+      `Organización: ${data.get('organizacion') || ''}`,
+      `Perfil: ${data.get('tipo') || ''}`,
+      `Interés: ${data.get('interes') || ''}`,
+      '',
+      'Necesidad o mensaje:',
+      `${data.get('mensaje') || ''}`,
+    ].join('\n');
+
+    if (status) {
+      status.textContent = 'Se está abriendo tu aplicación de correo. La solicitud solo se enviará cuando tú la confirmes.';
+      status.classList.remove('hidden');
+    }
+    window.location.href = `mailto:contacto@appgobernaia.es?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>

@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://gobernaia.es',
+  site: 'https://appgobernaia.com',
   integrations: [
     tailwind({
       applyBaseStyles: true,
