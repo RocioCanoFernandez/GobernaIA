@@ -1,92 +1,137 @@
 ---
-// Sección de Preguntas Frecuentes (FAQ)
-// Ruta en repositorio: web/src/components/FaqSection.astro
-// Justificación: Resuelve las objeciones clave de despachos, gestoras y empresas con transparencia jurídica.
+const faqGroups = [
+  {
+    eyebrow: 'Plataforma actual',
+    title: 'Gobernanza, usuarios y responsabilidades',
+    tone: 'green',
+    items: [
+      {
+        question: '¿GobernaIA garantiza por sí sola el cumplimiento normativo?',
+        answer: '<strong>No.</strong> GobernaIA organiza el inventario, las decisiones, los controles, los responsables y las evidencias de cada sistema de IA. Ayuda a trabajar con mayor trazabilidad, pero no sustituye el diagnóstico ni el asesoramiento jurídico, técnico, de ciberseguridad o de protección de datos.',
+      },
+      {
+        question: '¿A quién pertenecen los datos y expedientes?',
+        answer: '<strong>A la empresa cliente.</strong> Una gestora puede administrarlos mediante acceso delegado y permisos diferenciados. Las aportaciones y cambios deben quedar trazados, y un cambio de gestora debe poder realizarse sin perder la información de la empresa.',
+      },
+      {
+        question: '¿Puede utilizarla una empresa sin despacho o consultora?',
+        answer: 'Sí, especialmente cuando dispone de un equipo jurídico, de cumplimiento o de profesionales capacitados. Una organización sin conocimiento especializado puede necesitar diagnóstico previo, formación o acompañamiento para aplicar correctamente los criterios.',
+      },
+      {
+        question: '¿Qué ocurre si cambia el proveedor, el modelo, la finalidad o los datos?',
+        answer: 'El expediente se mantiene como un proceso vivo. El cambio se registra y puede activar una revisión de la clasificación, los riesgos, los controles o las evidencias afectadas. El objetivo es conservar el contexto y el historial de decisiones, no dar por cerrado el sistema tras una evaluación inicial.',
+      },
+    ],
+  },
+  {
+    eyebrow: 'En validación',
+    title: 'Protección documental antes de utilizar una IA',
+    tone: 'red',
+    items: [
+      {
+        question: '¿Qué hace actualmente la herramienta de protección documental?',
+        answer: 'Localiza identificadores mediante reglas y patrones, muestra cada coincidencia para revisarla y genera una copia nueva con los datos seleccionados eliminados o sustituidos. También permite añadir zonas manualmente y procesar lotes de documentos.',
+      },
+      {
+        question: '¿Utiliza inteligencia artificial, aprendizaje automático u OCR?',
+        answer: '<strong>El candidato actual no.</strong> La detección se realiza mediante reglas deterministas y el procesamiento de demostración es local. Las capturas requieren marcado manual y los PDF escaneados sin texto se rechazan porque no se aplica reconocimiento óptico de caracteres.',
+      },
+      {
+        question: '¿Qué archivos admite?',
+        answer: 'El flujo probado trabaja con PDF y DOCX con texto, además de PNG y JPG mediante selección manual. Puede revisar varios archivos y descargar las copias generadas conjuntamente. Los archivos protegidos, dañados o que no pueden tratarse con seguridad se rechazan explicando el motivo.',
+      },
+      {
+        question: '¿Eliminar nombres, DNI o correos convierte el documento en anónimo?',
+        answer: '<strong>No necesariamente.</strong> El contexto, los datos indirectos o una combinación de atributos pueden permitir la reidentificación. Por eso la herramienta exige revisión humana y diferencia entre eliminación irreversible y seudonimización reversible.',
+      },
+      {
+        question: '¿Puede recuperarse la información eliminada retirando una caja negra?',
+        answer: 'En el modo de eliminación se genera una salida nueva sin conservar el texto cubierto como una capa recuperable ni heredar los metadatos del original. En el modo reversible, las equivalencias se guardan aparte y cifradas; por tanto, ese resultado es seudonimizado y no anónimo.',
+      },
+      {
+        question: '¿Ya puede utilizarse con documentos reales de clientes?',
+        answer: '<strong>Todavía no como versión de producción.</strong> El candidato se está validando con documentación ficticia. Antes de tratar información real deben integrarse y comprobarse identidad, permisos, aislamiento entre clientes, gestión de claves, antimalware, auditoría, conservación y borrado seguro.',
+      },
+    ],
+  },
+  {
+    eyebrow: 'Hoja de ruta',
+    title: 'Privacidad, ciberseguridad y evolución del producto',
+    tone: 'slate',
+    items: [
+      {
+        question: '¿GobernaIA incluye ya módulos completos de RGPD y ciberseguridad?',
+        answer: '<strong>No en la versión actual.</strong> La plataforma se centra hoy en gobernanza y evidencias de sistemas de IA, mientras la protección documental está en validación. Privacidad y trazabilidad de controles de ciberseguridad forman parte de la evolución prevista.',
+      },
+      {
+        question: '¿Cómo se incorporarán las próximas capacidades?',
+        answer: 'De forma gradual y separando claramente cada especialidad. Las funciones se definirán con profesionales jurídicos, de protección de datos y técnicos, y solo se presentarán como disponibles cuando hayan superado la validación funcional, de seguridad y de uso correspondiente.',
+      },
+      {
+        question: '¿Cómo puedo conocer el estado real de cada módulo?',
+        answer: 'En la web distinguimos entre plataforma actual, capacidades en validación y hoja de ruta. En una demostración indicamos qué funciones pueden probarse, con qué tipo de datos y qué controles siguen pendientes antes de un uso real.',
+      },
+    ],
+  },
+];
+
+const toneClasses = {
+  green: 'border-green-200 bg-green-50 text-green-800',
+  red: 'border-red-200 bg-red-50 text-goberna-red-dark',
+  slate: 'border-slate-200 bg-slate-100 text-slate-700',
+};
 ---
 
-<section id="faq" class="py-20 bg-gray-50/60 border-b border-goberna-border">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <div class="text-center mb-16 space-y-3">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-gray-200 text-xs font-semibold text-gray-700">
-        Claridad Normativa
+<section id="faq" class="border-b border-goberna-border bg-gray-50/60 py-20 sm:py-24">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <div class="inline-flex items-center gap-2 rounded-full border border-red-200 bg-white px-3 py-1 text-xs font-semibold text-goberna-red-dark">
+        Alcance y límites
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-goberna-dark tracking-tight">
+      <h2 class="mt-5 text-3xl font-extrabold tracking-tight text-goberna-dark sm:text-4xl">
         Preguntas frecuentes sobre GobernaIA
       </h2>
-      <p class="text-sm sm:text-base text-goberna-muted">
-        Respuestas técnicas y jurídicas sobre cómo encaja la plataforma en tu operativa diaria.
+      <p class="mt-4 text-base leading-relaxed text-goberna-muted">
+        Qué puede utilizarse hoy, qué estamos validando y qué forma parte de la evolución prevista.
       </p>
     </div>
 
-    <div class="space-y-4">
-      
-      <!-- FAQ 1 -->
-      <details class="group bg-white p-6 rounded-xl border border-gray-200 shadow-sm transition-all open:ring-1 open:ring-goberna-red/20">
-        <summary class="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none text-base">
-          <span>¿Quién es el propietario de los datos y expedientes de gobernanza?</span>
-          <span class="text-gray-400 group-open:rotate-180 transition-transform">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </span>
-        </summary>
-        <p class="mt-4 text-sm text-goberna-muted leading-relaxed border-t border-gray-100 pt-3">
-          <strong>La empresa cliente es siempre la propietaria legítima de su información.</strong> Los despachos y consultoras acceden bajo un modelo de delegación explícita. Si el cliente cambia de asesor o decide internalizar la gestión, conserva la titularidad y todo el histórico inmutable de sus expedientes.
-        </p>
-      </details>
+    <div class="mt-14 space-y-12">
+      {faqGroups.map((group) => (
+        <section aria-labelledby={`faq-${group.tone}`}>
+          <div class="mb-5 flex flex-col gap-3 border-b border-gray-200 pb-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <span class={`inline-flex rounded-full border px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${toneClasses[group.tone]}`}>
+                {group.eyebrow}
+              </span>
+              <h3 id={`faq-${group.tone}`} class="mt-3 text-2xl font-extrabold text-goberna-dark">{group.title}</h3>
+            </div>
+            <span class="text-xs font-medium text-goberna-muted">{group.items.length} respuestas</span>
+          </div>
 
-      <!-- FAQ 2 -->
-      <details class="group bg-white p-6 rounded-xl border border-gray-200 shadow-sm transition-all open:ring-1 open:ring-goberna-red/20">
-        <summary class="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none text-base">
-          <span>¿GobernaIA sustituye el asesoramiento de un abogado o auditor?</span>
-          <span class="text-gray-400 group-open:rotate-180 transition-transform">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </span>
-        </summary>
-        <p class="mt-4 text-sm text-goberna-muted leading-relaxed border-t border-gray-100 pt-3">
-          <strong>En absoluto.</strong> GobernaIA es una herramienta para potenciar y ordenar el trabajo experto. El software automatiza la estructura, el inventario, los cuestionarios guiados y el seguimiento de controles, pero la firma, valoración de impacto y validación de clasificaciones complejas requiere la intervención de profesionales jurídicos o técnicos.
-        </p>
-      </details>
-
-      <!-- FAQ 3 -->
-      <details class="group bg-white p-6 rounded-xl border border-gray-200 shadow-sm transition-all open:ring-1 open:ring-goberna-red/20">
-        <summary class="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none text-base">
-          <span>¿Qué sucede si un proveedor cambia su modelo de IA (ej. de GPT-4o a otro modelo)?</span>
-          <span class="text-gray-400 group-open:rotate-180 transition-transform">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </span>
-        </summary>
-        <p class="mt-4 text-sm text-goberna-muted leading-relaxed border-t border-gray-100 pt-3">
-          Ese es precisamente el propósito del <strong>expediente vivo</strong>. La plataforma permite reclasificar o actualizar la ficha técnica del proveedor (Dimensión B: GPAI de terceros), dejando constancia fechada del cambio sin borrar el histórico previo, y activando la revisión de las evidencias afectadas.
-        </p>
-      </details>
-
-      <!-- FAQ 4 -->
-      <details class="group bg-white p-6 rounded-xl border border-gray-200 shadow-sm transition-all open:ring-1 open:ring-goberna-red/20">
-        <summary class="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none text-base">
-          <span>¿Cómo se diferencia de una solución genérica de protección de datos (RGPD)?</span>
-          <span class="text-gray-400 group-open:rotate-180 transition-transform">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </span>
-        </summary>
-        <p class="mt-4 text-sm text-goberna-muted leading-relaxed border-t border-gray-100 pt-3">
-          El RGPD protege los datos personales; el Reglamento Europeo de IA fiscaliza el <strong>uso del sistema, sus riesgos de sesgo, la supervisión humana, la precisión y su impacto en derechos fundamentales</strong>. Cumplir RGPD no implica cumplir el AI Act. GobernaIA aborda las 12 áreas técnicas y operativas específicas que exige la normativa europea de IA.
-        </p>
-      </details>
-
-      <!-- FAQ 5 -->
-      <details class="group bg-white p-6 rounded-xl border border-gray-200 shadow-sm transition-all open:ring-1 open:ring-goberna-red/20">
-        <summary class="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none text-base">
-          <span>¿Cómo puedo empezar a utilizar GobernaIA en mi despacho u organización?</span>
-          <span class="text-gray-400 group-open:rotate-180 transition-transform">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </span>
-        </summary>
-        <p class="mt-4 text-sm text-goberna-muted leading-relaxed border-t border-gray-100 pt-3">
-          A través de una sesión de presentación con nuestro equipo. Evaluamos tu modelo de gestión (si eres despacho que lleva varios clientes o empresa con sistemas propios), te mostramos el entorno stage en vivo y configuramos el espacio adecuado para tu caso de uso.
-        </p>
-      </details>
-
+          <div class="space-y-3">
+            {group.items.map((item) => (
+              <details class="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all open:border-red-200 open:ring-1 open:ring-red-100 sm:p-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-base font-bold text-gray-900">
+                  <span>{item.question}</span>
+                  <span class="shrink-0 text-gray-400 transition-transform group-open:rotate-180" aria-hidden="true">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                  </span>
+                </summary>
+                <p class="mt-4 border-t border-gray-100 pt-4 text-sm leading-relaxed text-goberna-muted" set:html={item.answer}></p>
+              </details>
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
 
+    <div class="mt-14 rounded-2xl bg-goberna-dark px-6 py-7 text-center sm:px-10">
+      <p class="text-lg font-bold text-white">¿Tienes una duda sobre tu caso?</p>
+      <p class="mt-2 text-sm text-slate-300">Te indicamos qué puede probarse y qué condiciones requiere antes de utilizar documentación real.</p>
+      <a href="mailto:contacto@appgobernaia.com?subject=Consulta%20sobre%20GobernaIA" class="mt-5 inline-flex items-center justify-center rounded-lg bg-goberna-red px-5 py-2.5 text-sm font-bold text-white transition hover:bg-red-700">
+        Escribir a contacto@appgobernaia.com
+      </a>
+    </div>
   </div>
 </section>
